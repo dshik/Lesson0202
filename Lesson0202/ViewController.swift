@@ -8,13 +8,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController:
+    UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
 
+    @objc
+    func keyboardWillShow(notification: Notification) {
+        guard let keyboardRect = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {return}
+        
+        scrollView.contentInset.bottom = keyboardRect.height
+    }
 }
+
 
