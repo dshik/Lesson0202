@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController:
+class LoginViewController:
     UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
-        
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var pwdTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,6 +32,21 @@ class ViewController:
         
         scrollView.contentInset.bottom = keyboardRect.height
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if loginTextField.text == "admin", pwdTextField.text == "123" {
+            return true
+        }
+        
+        let alert = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(action)
+        present(alert, animated: true)
+        
+        return false
+    }
+
 }
 
 
