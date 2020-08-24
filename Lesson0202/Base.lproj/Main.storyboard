@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -151,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="1309.5999999999999" y="-461.01949025487261"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Друзья-->
         <scene sceneID="Ubf-Ud-c5Q">
             <objects>
-                <tableViewController id="p02-wg-DQ5" sceneMemberID="viewController">
+                <tableViewController id="p02-wg-DQ5" customClass="FreindsTableViewController" customModule="Lesson0202" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2r1-q3-gQN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,6 +168,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4T7-fA-BVG" kind="show" id="VBJ-Au-Kz8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -174,11 +178,49 @@
                             <outlet property="delegate" destination="p02-wg-DQ5" id="v0x-wD-mne"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="uM8-Db-vib"/>
+                    <navigationItem key="navigationItem" title="Друзья" id="uM8-Db-vib">
+                        <barButtonItem key="backBarButtonItem" title="Друзья" id="RLR-zc-zmD"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uz-eN-Mi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2208" y="-462"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="MSp-CT-JND">
+            <objects>
+                <collectionViewController id="4T7-fA-BVG" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="sI3-7Y-CY8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e0N-K7-XXr">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3nL-32-3Fz">
+                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="haO-UK-U0c">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="4T7-fA-BVG" id="wua-DT-VzW"/>
+                            <outlet property="delegate" destination="4T7-fA-BVG" id="Yd3-sH-BXp"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="8yJ-0I-ofI"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vYG-qt-JYi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3029" y="-459"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="Whk-5e-PnB">
@@ -199,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="1309.5999999999999" y="202.84857571214394"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Группы-->
         <scene sceneID="Pob-jj-yAv">
             <objects>
-                <tableViewController id="uMg-YW-FTM" sceneMemberID="viewController">
+                <tableViewController id="uMg-YW-FTM" customClass="GroupsTableViewController" customModule="Lesson0202" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qjo-4A-c7E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,11 +264,47 @@
                             <outlet property="delegate" destination="uMg-YW-FTM" id="C7z-aM-JcO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cqK-c2-Mag"/>
+                    <navigationItem key="navigationItem" title="Группы" id="cqK-c2-Mag">
+                        <barButtonItem key="backBarButtonItem" title="Группы" id="h0W-eI-D77"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="mpt-DE-yIk">
+                            <connections>
+                                <segue destination="Lnc-f4-mQk" kind="show" id="zsd-oI-vlc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bc7-wb-jY4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2208" y="222"/>
+        </scene>
+        <!--Groups Global Search Table View Controller-->
+        <scene sceneID="4tt-1b-VDB">
+            <objects>
+                <tableViewController id="Lnc-f4-mQk" customClass="GroupsGlobalSearchTableViewController" customModule="Lesson0202" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="onC-z1-OlB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2QL-1e-Cqf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2QL-1e-Cqf" id="xnu-wa-1qB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Lnc-f4-mQk" id="9cw-uE-IjM"/>
+                            <outlet property="delegate" destination="Lnc-f4-mQk" id="KEo-tE-RcZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="v9C-Zn-deV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rsj-m3-Mjj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3017" y="226"/>
         </scene>
     </scenes>
 </document>
