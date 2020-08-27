@@ -98,9 +98,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="OUg-tr-iTk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3yc-hc-JK8"/>
+                            <constraint firstItem="OUg-tr-iTk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UPJ-Xv-nl1"/>
                             <constraint firstItem="OUg-tr-iTk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ebW-G0-Ul7"/>
                             <constraint firstItem="OUg-tr-iTk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="llB-8q-dbl"/>
-                            <constraint firstItem="OUg-tr-iTk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wyX-3K-AzC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YDJ-NH-ofG" secondAttribute="bottom" constant="179" id="t4W-1f-SMn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
