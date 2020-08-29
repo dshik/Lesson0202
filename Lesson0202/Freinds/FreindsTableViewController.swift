@@ -9,12 +9,22 @@
 import UIKit
 
 class FreindsTableViewController: UITableViewController {
+    var freinds: [String] = [
+        "Feruze",
+        "Semen",
+        "Inna"
+    ]
+    
+    
     @IBOutlet var tableFreinds: UITableView!
     
+       
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableFreinds.dataSource = self
+        
+        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -33,14 +43,17 @@ class FreindsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return freinds.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "avatarFrend", for: indexPath)
 
-        cell.textLabel?.text = "Привет"
+        cell.textLabel?.text = freinds[indexPath.row]
+        
+        
+//        cell.avatar.image = UIImage(named: "second_image")
 
         return cell
     }

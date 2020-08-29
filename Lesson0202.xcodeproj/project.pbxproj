@@ -11,6 +11,7 @@
 		F913F9D124F2F8670024E112 /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F913F9D024F2F8670024E112 /* GroupsTableViewController.swift */; };
 		F913F9D324F2FA460024E112 /* PhotoUserFreindsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F913F9D224F2FA460024E112 /* PhotoUserFreindsCollectionViewController.swift */; };
 		F913F9D524F2FD350024E112 /* GroupsGlobalSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F913F9D424F2FD350024E112 /* GroupsGlobalSearchTableViewController.swift */; };
+		F932C17A24F8557400B30F68 /* AvatarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F932C17924F8557400B30F68 /* AvatarTableViewCell.swift */; };
 		F938C5D624F1436E00C95081 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938C5D524F1436E00C95081 /* AppDelegate.swift */; };
 		F938C5D824F1436E00C95081 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938C5D724F1436E00C95081 /* SceneDelegate.swift */; };
 		F938C5DA24F1436E00C95081 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F938C5D924F1436E00C95081 /* LoginViewController.swift */; };
@@ -24,6 +25,7 @@
 		F913F9D024F2F8670024E112 /* GroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewController.swift; sourceTree = "<group>"; };
 		F913F9D224F2FA460024E112 /* PhotoUserFreindsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUserFreindsCollectionViewController.swift; sourceTree = "<group>"; };
 		F913F9D424F2FD350024E112 /* GroupsGlobalSearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsGlobalSearchTableViewController.swift; sourceTree = "<group>"; };
+		F932C17924F8557400B30F68 /* AvatarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarTableViewCell.swift; sourceTree = "<group>"; };
 		F938C5D224F1436E00C95081 /* Lesson0202.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson0202.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F938C5D524F1436E00C95081 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F938C5D724F1436E00C95081 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F91DCA5624F9B46100DC5EB0 /* Freinds */ = {
+			isa = PBXGroup;
+			children = (
+				F913F9CE24F2F7F70024E112 /* FreindsTableViewController.swift */,
+				F932C17924F8557400B30F68 /* AvatarTableViewCell.swift */,
+			);
+			path = Freinds;
+			sourceTree = "<group>";
+		};
+		F932C17824F81B7B00B30F68 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		F938C5C924F1436E00C95081 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +82,11 @@
 		F938C5D424F1436E00C95081 /* Lesson0202 */ = {
 			isa = PBXGroup;
 			children = (
+				F932C17824F81B7B00B30F68 /* Photo */,
 				F938C5D524F1436E00C95081 /* AppDelegate.swift */,
 				F938C5D724F1436E00C95081 /* SceneDelegate.swift */,
 				F938C5D924F1436E00C95081 /* LoginViewController.swift */,
-				F913F9CE24F2F7F70024E112 /* FreindsTableViewController.swift */,
+				F91DCA5624F9B46100DC5EB0 /* Freinds */,
 				F913F9D024F2F8670024E112 /* GroupsTableViewController.swift */,
 				F913F9D224F2FA460024E112 /* PhotoUserFreindsCollectionViewController.swift */,
 				F913F9D424F2FD350024E112 /* GroupsGlobalSearchTableViewController.swift */,
@@ -156,6 +175,7 @@
 				F913F9CF24F2F7F70024E112 /* FreindsTableViewController.swift in Sources */,
 				F913F9D324F2FA460024E112 /* PhotoUserFreindsCollectionViewController.swift in Sources */,
 				F913F9D524F2FD350024E112 /* GroupsGlobalSearchTableViewController.swift in Sources */,
+				F932C17A24F8557400B30F68 /* AvatarTableViewCell.swift in Sources */,
 				F938C5D824F1436E00C95081 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
