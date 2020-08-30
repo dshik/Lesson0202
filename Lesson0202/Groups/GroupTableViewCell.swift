@@ -1,18 +1,19 @@
 //
-//  AvatarTableViewCell.swift
+//  GroupTableViewCell.swift
 //  Lesson0202
 //
-//  Created by Дмитрий Шикунов on 27.08.2020.
+//  Created by Дмитрий Шикунов on 30.08.2020.
 //  Copyright © 2020 Дмитрий Шикунов. All rights reserved.
 //
 
 import UIKit
 
-class AvatarTableViewCell: UITableViewCell {
-    @IBOutlet weak var freindContent: FreindsContentView!
+class GroupTableViewCell: UITableViewCell {
+
     
-    @IBOutlet weak var freindName: UILabel!
-    @IBOutlet weak var freinImageView: UIImageView!
+    @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var groupAvatar: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +26,4 @@ class AvatarTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    
 }

@@ -8,11 +8,13 @@
 
 import UIKit
 
+
+
 class FreindsTableViewController: UITableViewController {
-    var freinds: [String] = [
-        "Feruze",
-        "Semen",
-        "Inna"
+    var freinds = [
+        User(userName: "Feruze", userAvatar: "FeruseCompress", userPhoto: "FeruseCompress", userCollectionPhoto: ["FeruseCompress", "Semen", "Inna"]),
+        User(userName: "Semen", userAvatar: "SemenCompress", userPhoto: "SemenCompress", userCollectionPhoto: ["FeruseCompress", "Semen", "Inna"]),
+        User(userName: "Inna", userAvatar: "Inna", userPhoto: "Inna", userCollectionPhoto: ["FeruseCompress", "Semen", "Inna"])
     ]
     
     
@@ -48,9 +50,23 @@ class FreindsTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "avatarFrend", for: indexPath)
+/*        let cell = tableView.dequeueReusableCell(withIdentifier: "avatarFrend", for: indexPath)
+*/
+        let cell = tableView.dequeueReusableCell(withIdentifier: "avatarFrend", for: indexPath) as! AvatarTableViewCell
 
-        cell.textLabel?.text = freinds[indexPath.row]
+        
+        /*
+         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+         cell.textLabel?.text = self.data[indexPath.row]
+         return cell
+         */
+        
+        
+        // cell.textLabel?.text = freinds[indexPath.row]
+        cell.freindName.text = freinds[indexPath.row].userName
+        cell.freinImageView.image = UIImage(named: freinds[indexPath.row].userAvatar)
+        
+        // cell.freindAvatarImage.image = UIImage(named: "inna")
         
         
 //        cell.avatar.image = UIImage(named: "second_image")
