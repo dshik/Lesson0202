@@ -8,15 +8,9 @@
 
 import UIKit
 
-class GroupsTableViewController: UITableViewController {
+class GroupsTableViewController: UITableViewController, FullGroupHandler {
 
-    var groups = [
-        Group(groupName: "Дизайнеры", groupAvatar: ""),
-        Group(groupName: "Одноклассники", groupAvatar: ""),
-        Group(groupName: "Политех", groupAvatar: ""),
-        Group(groupName: "Универ", groupAvatar: "")
-    ]
-    
+    var favoriteGroups: [Group] = []
     
     @IBOutlet var tableGroup: UITableView!
     
@@ -25,7 +19,6 @@ class GroupsTableViewController: UITableViewController {
 
         tableGroup.dataSource = self
 
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,7 +35,7 @@ class GroupsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groups.count
+        return favoriteGroups.count
     }
 
 
@@ -50,16 +43,45 @@ class GroupsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupAvatar", for: indexPath) as! GroupTableViewCell
 
         
-        cell.groupName.text = groups[indexPath.row].groupName
-        cell.groupAvatar.image = UIImage(named: groups[indexPath.row].groupAvatar)
+        cell.groupName.text = favoriteGroups[indexPath.row].groupName
+        cell.groupAvatar.image = UIImage(named: favoriteGroups[indexPath.row].groupAvatar)
         
-//        cell.freindName.text = freinds[indexPath.row].userName
-//        cell.freinImageView.image = UIImage(named: freinds[indexPath.row].userAvatar)
-
         return cell
     }
 
+    func groupChosen(selectedGroup: Group) {
+        // Оба варианта правильные
 
+        if !favoriteGroups.contains(where: {$0.groupName == selectedGroup.groupName}) {
+            favoriteGroups.append(selectedGroup)
+            self.tableView.reloadData()
+        }
+
+/*
+        let comparateNameGroup: (Group) -> Bool = { (groupFromFavorite: Group) -> Bool in return groupFromFavorite.groupName ==  selectedGroup.groupName}
+        if !favoriteGroups.contains(where: comparateNameGroup) {
+            favoriteGroups.append(selectedGroup)
+            self.tableView.reloadData()
+        }*/
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            favoriteGroups.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        default: break
+        }
+    }
+    
+    @IBAction func addGroup(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+         let fullGroupListVC = storyboard.instantiateViewController(identifier: "GroupsGlobalSearchTableViewControllerID") as! GroupsGlobalSearchTableViewController
+         
+         fullGroupListVC.groupHandler = self
+         
+         navigationController?.pushViewController(fullGroupListVC, animated: true)
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

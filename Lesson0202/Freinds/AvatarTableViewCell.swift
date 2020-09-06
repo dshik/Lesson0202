@@ -9,7 +9,6 @@
 import UIKit
 
 class AvatarTableViewCell: UITableViewCell {
-    @IBOutlet weak var freindContent: FreindsContentView!
     
     @IBOutlet weak var freindName: UILabel!
     @IBOutlet weak var freinImageView: UIImageView!
