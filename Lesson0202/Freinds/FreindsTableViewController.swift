@@ -53,23 +53,9 @@ class FreindsTableViewController: UITableViewController {
 /*        let cell = tableView.dequeueReusableCell(withIdentifier: "avatarFrend", for: indexPath)
 */
         let cell = tableView.dequeueReusableCell(withIdentifier: "avatarFrend", for: indexPath) as! AvatarTableViewCell
-
         
-        /*
-         let cell = self.tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-         cell.textLabel?.text = self.data[indexPath.row]
-         return cell
-         */
-        
-        
-        // cell.textLabel?.text = freinds[indexPath.row]
         cell.freindName.text = freinds[indexPath.row].userName
-        cell.freinImageView.image = UIImage(named: freinds[indexPath.row].userAvatar)
-        
-        // cell.freindAvatarImage.image = UIImage(named: "inna")
-        
-        
-//        cell.avatar.image = UIImage(named: "second_image")
+        cell.FreindImage.freindPhotoImageView.image = UIImage(named: freinds[indexPath.row].userAvatar)
 
         return cell
     }

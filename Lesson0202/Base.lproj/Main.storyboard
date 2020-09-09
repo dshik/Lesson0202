@@ -162,42 +162,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="avatarFrend" translatesAutoresizingMaskIntoConstraints="NO" id="rHM-Jf-QFb" customClass="AvatarTableViewCell" customModule="Lesson0202" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="64.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="avatarFrend" rowHeight="120" translatesAutoresizingMaskIntoConstraints="NO" id="rHM-Jf-QFb" customClass="AvatarTableViewCell" customModule="Lesson0202" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rHM-Jf-QFb" id="knk-Di-Laq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZ3-fN-4z6">
-                                            <rect key="frame" x="313" y="2" width="60" height="60.5"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5r-Hv-kpZ" customClass="FreindPhotoView" customModule="Lesson0202" customModuleProvider="target">
+                                            <rect key="frame" x="255" y="0.0" width="120" height="120"/>
+                                            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="Eh8-Wb-9iq"/>
-                                                <constraint firstAttribute="height" constant="60" id="YuO-0r-hdn"/>
+                                                <constraint firstAttribute="width" constant="120" id="6nz-jJ-Ysf"/>
+                                                <constraint firstAttribute="height" constant="120" id="OqC-dM-g0a"/>
                                             </constraints>
-                                        </imageView>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vv-na-bAb">
-                                            <rect key="frame" x="8" y="22" width="42" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="bsm-pq-hDq"/>
-                                            </constraints>
+                                            <rect key="frame" x="20" y="49.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5Vv-na-bAb" secondAttribute="trailing" symbolic="YES" id="C5A-xs-jOk"/>
-                                        <constraint firstItem="cZ3-fN-4z6" firstAttribute="leading" secondItem="knk-Di-Laq" secondAttribute="leading" constant="313" id="MK0-Qv-AUX"/>
-                                        <constraint firstAttribute="bottom" secondItem="cZ3-fN-4z6" secondAttribute="bottom" constant="2" id="TMx-Mx-Ozv"/>
-                                        <constraint firstItem="5Vv-na-bAb" firstAttribute="centerY" secondItem="knk-Di-Laq" secondAttribute="centerY" id="blb-1e-wpN"/>
-                                        <constraint firstItem="5Vv-na-bAb" firstAttribute="leading" secondItem="knk-Di-Laq" secondAttribute="leading" constant="8" id="g7F-08-ZYv"/>
-                                        <constraint firstItem="cZ3-fN-4z6" firstAttribute="top" secondItem="knk-Di-Laq" secondAttribute="top" constant="2" id="lhX-ti-IyO"/>
-                                        <constraint firstAttribute="trailing" secondItem="cZ3-fN-4z6" secondAttribute="trailing" constant="2" id="ut1-4n-kKZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="K5r-Hv-kpZ" secondAttribute="bottom" id="9kk-kF-YKW"/>
+                                        <constraint firstItem="5Vv-na-bAb" firstAttribute="centerY" secondItem="knk-Di-Laq" secondAttribute="centerY" id="Oja-mU-rRm"/>
+                                        <constraint firstItem="5Vv-na-bAb" firstAttribute="leading" secondItem="knk-Di-Laq" secondAttribute="leadingMargin" constant="4" id="SKe-Jb-Sbw"/>
+                                        <constraint firstItem="K5r-Hv-kpZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Vv-na-bAb" secondAttribute="trailing" constant="2" id="dsm-rd-PTB"/>
+                                        <constraint firstItem="K5r-Hv-kpZ" firstAttribute="top" secondItem="knk-Di-Laq" secondAttribute="top" id="nf9-ar-pA2"/>
+                                        <constraint firstAttribute="trailing" secondItem="K5r-Hv-kpZ" secondAttribute="trailing" id="oDl-vs-cVw"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="freinImageView" destination="cZ3-fN-4z6" id="8Bu-xl-1Bx"/>
+                                    <outlet property="FreindImage" destination="K5r-Hv-kpZ" id="Jno-la-ubB"/>
                                     <outlet property="freindName" destination="5Vv-na-bAb" id="e2S-bj-5dk"/>
                                     <segue destination="4T7-fA-BVG" kind="show" id="azV-Jz-Edr"/>
                                 </connections>
